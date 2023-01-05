@@ -1,0 +1,39 @@
+﻿@using Entities.Concrete
+@model List<Skill>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Skill Table</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Skill</th>
+        <th>Level</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.SkillID</td>
+            <td>@item.Title</td>
+            <td>@item.Value</td>
+            <td><a href="/Skill/DeleteSkill/@item.SkillID" class="btn btn-danger">Delete Skill</a></td>
+            <td><a href="/Skill/UpdateSkill/@item.SkillID" class="btn btn-warning">Update Skill</a></td>
+
+        </tr>
+    }
+    <tr>
+        <td>1925</td>
+        <td>Goztepe</td>
+        <td>100</td>
+        <td><a href="#" class="btn btn-danger">Sil</a></td>
+        <td><a href="#" class="btn btn-warning">Guncelle</a></td>
+
+    </tr>
+</table>
+<br />
+<td><a href="/Skill/AddSkill" class="btn btn-primary">Add Skill</a></td>
+

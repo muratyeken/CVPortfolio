@@ -1,0 +1,24 @@
+﻿@model Entities.Concrete.Skill
+@{
+    ViewData["Title"] = "UpdateSkill";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h1>Update Skill Page</h1>
+@using (Html.BeginForm("updateSkill", "Skill", FormMethod.Post))
+{
+    @Html.HiddenFor(x=>x.SkillID)
+
+    <br />
+    @Html.Label("Skill Name")
+    @Html.TextBoxFor(x=>x.Title, new {@class="form-control"})
+
+    <br />
+
+    @Html.Label("Skill Value")
+    @Html.TextBoxFor(x=>x.Value, new {@class="form-control"})
+
+    <button href="/Skill/Index" class="btn btn-success">Update Skill</button>
+    <a href="/Skill/Index" class="btn btn-primary">Skills</a>
+
+}
+
