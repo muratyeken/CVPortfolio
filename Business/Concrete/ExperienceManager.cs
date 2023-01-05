@@ -20,17 +20,18 @@ namespace Business.Concrete
 
         public void AddT(Experience t)
         {
-            throw new NotImplementedException();
+            _experience.Insert(t);
         }
 
         public void DeleteT(Experience t)
         {
-            throw new NotImplementedException();
+            _experience.Delete(t);
+
         }
 
         public Experience GetByIDT(int id)
         {
-            throw new NotImplementedException();
+            return _experience.GetByID(id);
         }
 
         public List<Experience> GetListT()
@@ -40,7 +41,7 @@ namespace Business.Concrete
 
         public void UpdateT(Experience t)
         {
-            throw new NotImplementedException();
+            _experience.Update(t);
         }
     }
 }

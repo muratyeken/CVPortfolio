@@ -1,0 +1,32 @@
+﻿@using Entities.Concrete
+@model List<Experience>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Experience Table</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Experience</th>
+        <th>Date</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ExprerienceID</td>
+            <td>@item.Name</td>
+            <td>@item.Date</td>
+            <td><a href="/Experience/DeleteExperience/@item.ExprerienceID" class="btn btn-danger">Delete Experience</a></td>
+            <td><a href="/Experience/UpdateExperience/@item.ExprerienceID" class="btn btn-warning">Update Experience</a></td>
+
+        </tr>
+    }
+    
+</table>
+<br />
+<td><a href="/Experience/AddExperience" class="btn btn-primary">Add Experience</a></td>
+

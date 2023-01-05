@@ -1,0 +1,33 @@
+﻿@model Entities.Concrete.Experience
+@{
+    ViewData["Title"] = "UpdateExperience";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Update Experience Page</h1>
+@using (Html.BeginForm("UpdateExperience", "Experience", FormMethod.Post))
+{
+    @Html.HiddenFor(x=>x.ExprerienceID)
+    <br />
+    @Html.Label("Experience Name")
+    @Html.TextBoxFor(x=>x.Name, new {@class="form-control"})
+
+    <br />
+
+    @Html.Label("Date")
+    @Html.TextBoxFor(x=>x.Date, new {@class="form-control"})
+    <br />
+
+    @Html.Label("Image")
+    @Html.TextBoxFor(x=>x.ImageUrl, new {@class="form-control"})
+    <br />
+
+    @Html.Label("Description")
+    @Html.TextAreaFor(x=>x.Description, new {@class="form-control"})
+
+    <button href="/Experience/Index" class="btn btn-outline-success">Update Experience</button>
+    <a href="/Experience/Index" class="btn btn-primary">Experiences</a>
+
+}
+
+
