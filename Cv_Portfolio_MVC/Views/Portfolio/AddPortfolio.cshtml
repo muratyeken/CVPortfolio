@@ -1,0 +1,28 @@
+﻿@model Entities.Concrete.Portfolio
+@{
+    ViewData["Title"] = "AddPortfolio";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>AddPortfolio</h1>
+
+@using (Html.BeginForm("AddPortfolio", "Portfolio", FormMethod.Post))
+{
+
+    <br />
+    @Html.Label("Portfolio Name")
+    @Html.TextBoxFor(x=>x.Name, new {@class="form-control"})
+    @Html.ValidationMessageFor(x=>x.Name)
+
+    <br />
+    
+    @Html.Label("Image")
+    @Html.TextBoxFor(x=>x.ImageUrl, new {@class="form-control"})
+    @Html.ValidationMessageFor(x=>x.ImageUrl)
+    <br />    
+
+
+    <button href="/Portfolio/Index" class="btn btn-success">Add Portfolio</button>
+    <a href="/Portfolio/Index" class="btn btn-primary">Portfolios</a>
+
+}

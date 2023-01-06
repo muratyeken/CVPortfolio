@@ -1,0 +1,26 @@
+﻿@model Entities.Concrete.Portfolio
+@{
+    ViewData["Title"] = "UpdatePortfolio";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>UpdatePortfolio</h1>
+@using (Html.BeginForm("UpdatePortfolio", "Portfolio", FormMethod.Post))
+{
+    @Html.HiddenFor(x=>x.PortfolioID)
+
+        <br />
+    @Html.Label("Portfolio Name")
+    @Html.TextBoxFor(x=>x.Name, new {@class="form-control"})
+    @Html.ValidationMessageFor(x=>x.Name)
+
+        <br />
+
+    @Html.Label("Image")
+    @Html.TextBoxFor(x=>x.ImageUrl, new {@class="form-control"})
+    @Html.ValidationMessageFor(x=>x.ImageUrl)
+
+        <button href="/Portfolio/Index" class="btn btn-success">Update Portfolio</button>
+    <a href="/Portfolio/Index" class="btn btn-primary">Portfolios</a>
+
+}

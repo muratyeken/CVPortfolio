@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Entities.Concrete.Portfolio>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Portfolios</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                #
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                ImageUrl
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.PortfolioID
+                </td>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.ImageUrl
+                </td>
+                <td>
+                <td><a href="/Portfolio/DeletePortfolio/@item.PortfolioID" class="btn btn-danger">Delete</a></td>
+                <td><a href="/Portfolio/UpdatePortfolio/@item.PortfolioID" class="btn btn-warning">Update</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+<td><a href="/Portfolio/AddPortfolio" class="btn btn-primary">Add Portfolio</a></td>

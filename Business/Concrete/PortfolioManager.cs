@@ -20,27 +20,27 @@ namespace Business.Concrete
 
         public void AddT(Portfolio t)
         {
-            throw new NotImplementedException();
+            _portfolio.Update(t);
         }
 
         public void DeleteT(Portfolio t)
         {
-            throw new NotImplementedException();
+            _portfolio.Delete(t);
         }
 
         public Portfolio GetByIDT(int id)
         {
-            throw new NotImplementedException();
+            return _portfolio.GetByID(id);
         }
 
         public List<Portfolio> GetListT()
         {
-            return _portfolio.GetList();
+            return  _portfolio.GetList();
         }
 
         public void UpdateT(Portfolio t)
         {
-            throw new NotImplementedException();
+            _portfolio.Update(t);
         }
     }
 }
