@@ -5,19 +5,19 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Cv_Portfolio_MVC.Controllers
 {
-    public class FeatureController : Controller
-        
+    public class AboutController : Controller
     {
-        FeatureManager featureManager = new FeatureManager(new EfFeature());
+        AboutManager aboutManager = new AboutManager(new EfAbout());
+
+        [HttpGet]
         public IActionResult Index()
         {
-            var values = featureManager.GetByIDT(1);
+            var values = aboutManager.GetByIDT(1);
             return View(values);
         }
-        [HttpPost]
-        public IActionResult Index(Feature feature)
+        public IActionResult Index(About about)
         {
-            featureManager.UpdateT(feature);
+            aboutManager.UpdateT(about);
             return RedirectToAction("Index","Default");
         }
     }
